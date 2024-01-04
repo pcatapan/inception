@@ -1,6 +1,9 @@
 FROM alpine:3.17
 
 EXPOSE 9000
+RUN apk update && apk upgrade
+
+
 RUN apk add curl php php-fpm php-mysqli php-curl php-dom php-exif php-fileinfo php-xml php-zip php-phar php-tokenizer
 RUN apk add php8-redis --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/
 
