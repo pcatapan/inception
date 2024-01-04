@@ -1,12 +1,8 @@
 FROM alpine:3.17
 
 EXPOSE 9000
-RUN apk update && apk upgrade
-
-
 RUN apk add curl php php-fpm php-mysqli php-curl php-dom php-exif php-fileinfo php-xml php-zip php-phar php-tokenizer
-RUN apk add php8-redis
-
+RUN apk add php81-pecl-redis
 
 RUN mkdir -p /var/www/html
 COPY tools/setup.sh /usr/local/bin/
