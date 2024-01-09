@@ -3,6 +3,8 @@ NAME = inception
 $(NAME): run
 
 run:
+	@mkdir -p /home/pcatapan/data/mysql
+	@mkdir -p /home/pcatapan/data/wordpress
 	@docker compose -f ./scrs/docker-compose.yml up -d --build
 
 down:
@@ -20,7 +22,6 @@ clean:
 	docker rm $$(docker ps -qa);\
 	docker rmi -f $$(docker images -qa);\
 	docker volume rm $$(docker volume ls -q);\
-	docker network rm $$(docker network ls -q);\
 
 fclean: down clean
 
