@@ -3,26 +3,24 @@ NAME = inception
 $(NAME): run
 
 run:
-	docker compose -f srcs/docker-compose.yml up -d
+	@docker compose -f ./scrs/docker-compose.yml up -d --build
 
 down:
-	docker compose -f srcs/docker-compose.yml down
+	@docker compose -f ./scrs/docker-compose.yml down
+
+re:
+	@docker compose -f scrs/docker-compose.yml up -d --build
 
 vclean:
 	docker volume rm -f srcs_wordpress_data
 	docker volume rm -f srcs_mariadb_data
 
-iclean:
-	docker image rm i-mariadb:1.0.0
-	docker image rm i-wordpress:1.0.0
-	docker image rm i-nginx:1.0.0
-	docker image rm i-adminer:1.0.0
-	docker image rm i-grafana:1.0.0
-	docker image rm i-redis:1.0.0
-	docker image rm i-ftp:1.0.0
-	docker image rm i-static_website:1.0.0
-
-clean: vclean iclean
+clean:
+	@docker stop $$(docker ps -qa);\
+	docker rm $$(docker ps -qa);\
+	docker rmi -f $$(docker images -qa);\
+	docker volume rm $$(docker volume ls -q);\
+	docker network rm $$(docker network ls -q);\
 
 fclean: down clean
 
