@@ -1,5 +1,5 @@
 #baseURL = "https://pcatapan.42.fr/static"
-title = "42 fitness"
+title = "Pcatapan 42Rome"
 theme = "m10c"
 paginate = 8
 canonifyURLs = true
@@ -17,10 +17,10 @@ canonifyURLs = true
     weight = 2
 
 [params]
-  author = "Vincent Bachelet"
-  description = "Student @42Paris && fitness addict"
+  author = "Pasquale Catapano"
+  description = "Student @42Rome"
   menu_item_separator = " - "
   [[params.social]]
     icon = "github"
     name = "Github"
-    url = "https://github.com/vincentbachelet-collab"
+    url = "https://github.com/pcatapan"
