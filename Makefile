@@ -10,20 +10,17 @@ run:
 down:
 	@docker compose -f ./scrs/docker-compose.yml down
 
-re:
-	@docker compose -f scrs/docker-compose.yml up -d --build
-
-vclean:
+vclean:	
 	docker volume rm -f srcs_wordpress_data
 	docker volume rm -f srcs_mariadb_data
 
 clean:
-	@docker stop $$(docker ps -qa);\
-	docker rm $$(docker ps -qa);\
-	docker rmi -f $$(docker images -qa);\
-	docker volume rm $$(docker volume ls -q);\
-	docker network rm $(docker network ls -q) 2>/dev/null;\
+	@docker stop $$(docker ps -qa) 2>/dev/null;\
+	docker rm $$(docker ps -qa) 2>/dev/null;\
+	docker rmi -f $$(docker images -qa) 2>/dev/null;\
+	docker volume rm $$(docker volume ls -q); \
+	docker network rm $$(docker network ls -q) 2>/dev/null || true
 
-fclean: down clean
+fclean: clean
 
 re: fclean run
