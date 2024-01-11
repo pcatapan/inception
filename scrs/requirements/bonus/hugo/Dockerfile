@@ -14,7 +14,7 @@ RUN hugo new site /var/hugo/me \
  	&&     hugo -b https://pcatapan.42.fr/me
 
 COPY    ./conf/config.toml        /var/hugo/me/config.toml
-COPY    conf/avatar.jpeg         /var/hugo/me/themes/m10c/static/avatar.jpeg
+COPY    conf/avatar.jpg         /var/hugo/me/themes/m10c/static/avatar.jpg
 
 EXPOSE 1313
 
