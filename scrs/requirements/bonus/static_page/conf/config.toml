@@ -17,10 +17,10 @@ canonifyURLs = true
     weight = 2
 
 [params]
-  author = "Irina Anghel"
+  author = "Pasquale Catapano"
   description = "Student @42RomaLuiss"
   menu_item_separator = " - "
   [[params.social]]
     icon = "github"
     name = "Github"
-    url = "https://github.com/irinpcatapan"
+    url = "https://github.com/pcatapan"

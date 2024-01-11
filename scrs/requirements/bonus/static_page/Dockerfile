@@ -18,7 +18,7 @@ RUN hugo new site /var/hugo/static \
 COPY    ./conf/config.toml        /var/hugo/static/config.toml
 COPY    conf/presentation.md    /var/hugo/static/content/posts/presentation.md
 COPY    conf/about.md           /var/hugo/static/content/about/index.md
-COPY    conf/avatar.jpg         /var/hugo/static/themes/m10c/static/avatar.jpeg
+COPY    conf/avatar.jpeg         /var/hugo/static/themes/m10c/static/avatar.jpeg
 COPY	conf/docker.png		/var/hugo/static/themes/m10c/static/docker.png
 
 EXPOSE 1313
